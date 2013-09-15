@@ -10,6 +10,8 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo('charset'); ?>"/>
+    <meta name="author" content="Leonardo Fernandez Sanchez" />
+    <meta name="description" content="Software engineering applied. Software Craftsmanship.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php wp_title('|', true, 'right'); ?></title>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>"/>
@@ -25,27 +27,26 @@
     <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>  data-spy="scroll" data-target=".bs-docs-sidebar" data-offset="10">
-    <div class="navbar navbar-inverse navbar-relative-top">
-        <div class="navbar-inner">
-            <div class="container">
-                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+    <header>
+        <div class="container">
+            <div class="row blog-name">
+                <a href="<?php echo site_url() ?>">
+                    Leonardo<b>FS</b>
                 </a>
-                <a class="brand" href="<?php echo home_url('/'); ?>" title="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>" rel="home">
-                    <?php bloginfo('name'); ?></a>
-                <?php wp_nav_menu(
-                        array(
-                            'menu' => 'main-menu',
-                            'container_class' => 'nav-collapse collapse',
-                            'menu_class' => 'nav',
-                            'fallback_cb' => '',
-                            'menu_id' => 'main-menu',
-                            'walker' => new Bootstrapwp_Walker_Nav_Menu()
-                        )
-                    ); ?>
+            </div>
+           <div class="row navbar">
+            <?php wp_nav_menu(
+                    array(
+                        'menu' => 'main-menu',
+                        'container_class' => 'nav-collapse collapse',
+                        'menu_class' => 'nav',
+                        'fallback_cb' => '',
+                        'menu_id' => 'main-menu',
+                        'walker' => new Bootstrapwp_Walker_Nav_Menu()
+                    )
+                ); ?>
             </div>
         </div>
-    </div>
+        
+    </header>
     <!-- End Header. Begin Template Content -->

@@ -7,28 +7,19 @@
  * @subpackage BootstrapWP
  */
 get_header(); ?>
+
 <?php while (have_posts()) : the_post(); ?>
+<?php leonardofs_hero($post->ID) ?>
+<article class="container post">
+		<header>
+    		<h2 class="offset1 span page-title"><?php the_title();?></h2>
+    	</header>
+	    <section class="span8">
+	        <?php the_content(); ?>
+	        <?php wp_link_pages( array('before' => '<div class="page-links">' . __('Pages:', 'bootstrapwp'), 'after' => '</div>')); ?>
+	        <?php edit_post_link(__('Edit', 'bootstrapwp'), '<span class="edit-link">', '</span>'); ?>
+	        <?php endwhile; // end of the loop. ?>
+	    </section><!-- /.span8 -->
 
-  <div class="container">
-    <div class="row">
-        <div class="span12">
-            <?php if (function_exists('bootstrapwp_breadcrumbs')) {
-            bootstrapwp_breadcrumbs();
-        } ?>
-        </div><!--/.span12 -->
-    </div><!--/.row -->
-
-    <header class="page-title">
-        <h1><?php the_title();?></h1>
-    </header>
-
-  <div class="row content">
-    <div class="span8">
-        <?php the_content(); ?>
-        <?php wp_link_pages( array('before' => '<div class="page-links">' . __('Pages:', 'bootstrapwp'), 'after' => '</div>')); ?>
-        <?php edit_post_link(__('Edit', 'bootstrapwp'), '<span class="edit-link">', '</span>'); ?>
-        <?php endwhile; // end of the loop. ?>
-    </div><!-- /.span8 -->
-
-    <?php get_sidebar(); ?>
-    <?php get_footer(); ?>
+</article> <!-- /.container -->
+<?php get_footer(); ?>

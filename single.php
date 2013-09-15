@@ -7,32 +7,25 @@
  * @subpackage BootstrapWP
  */
 get_header(); ?>
+
 <?php while (have_posts()) : the_post(); ?>
-
-  <div class="container">
-    <div class="row">
-        <div class="span12">
-            <?php if (function_exists('bootstrapwp_breadcrumbs')) {
-            bootstrapwp_breadcrumbs();
-        } ?>
-        </div><!--/.span12 -->
-    </div><!--/.row -->
-
-    <header class="post-title">
-        <h1><?php the_title();?></h1>
-    </header>
-
-    <div class="row content">
-        <div class="span8">
-             <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
+<?php leonardofs_hero($post->ID)?>
+<article class="container post">
+        <header class="span3 post-title">
+            <h2><?php the_title();?></h2>
+            <p class="meta"><?php echo bootstrapwp_posted_on();?></p>
+            <?php the_tags('<div>Tags: ', ', ', '</div>'); ?>
+        </header> <!--/.span3 -->
+        <section role="main" class="span8">
             <?php the_content(); ?>
-            <?php the_tags('<p>Tags: ', ', ', '</p>'); ?>
+            
             <?php endwhile; // end of the loop. ?>
             <hr/>
 
-            <?php comments_template(); ?>
             <?php bootstrapwp_content_nav('nav-below'); ?>
-        </div><!-- /.span8 -->
-
-    <?php get_sidebar('blog'); ?>
-    <?php get_footer(); ?>
+        </section><!-- /.span8 -->
+        <secttion role="secondary" class="offset1 span10">
+            <?php comments_template(); ?>
+        </section>
+</article><!--/.container -->
+<?php get_footer(); ?>

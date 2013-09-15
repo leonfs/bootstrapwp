@@ -498,3 +498,22 @@ function bootstrapwp_breadcrumbs()
 /**
  * This theme was built with PHP, Semantic HTML, CSS, love, and a bootstrap.
  */
+
+/** 
+* LEONARDOFS Functions
+*/
+function leonardofs_hero($postId) {
+    $heroUrl = '';
+
+    if ($postId != '') {
+        $thumbnailId =  get_post_thumbnail_id($postId);
+        $heroUrl = wp_get_attachment_url($thumbnailId);
+    }
+    if ($heroUrl == '') {
+        $heroUrl =  site_url() . '/wp-content/themes/bootstrapwp/assets/img/hero.png';
+    }
+    
+    
+    echo '<div class="index-hero" style="background-image: url('. $heroUrl. ');"></div>';
+}
+

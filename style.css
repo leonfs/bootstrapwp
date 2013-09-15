@@ -22,3 +22,109 @@ Comfortable with LESS?  Check out the /assets/css/less folder where the bootstra
 
 Not comfortable with LESS?  You can override the compiled bootstrapwp.css file by adding custom styles here.
 -------------------------------------------------- */
+@font-face
+{
+	font-family: HelveticaNeueLight;
+	src: url(assets/fonts/Helvetica-Neue-Font/HelveticaNeue.ttf);
+}
+
+body {
+	font-family: 'HelveticaNeueLight' !important;
+}
+
+/* HEADER STYLES */
+
+header .blog-name {
+	margin-top: 50px;
+	text-transform: uppercase;
+	transition: color 0.25s ease-in;
+    -webkit-transition: color 0.25s ease-in;
+}
+
+header .blog-name:hover a {
+	color: #307EA9;
+}
+
+header .blog-name:hover b {
+	color: #444;
+}
+
+header .blog-name a {
+	font-size: 44px;
+	color: #444;
+	font-weight: normal;
+}
+
+header .blog-name b {
+	color: #307EA9;
+	font-weight: bold;
+}
+
+header li > a {
+	font-size: 25px;
+}
+
+.index-hero {
+	width: 100%;
+	height: 200px;
+	
+	background-position: 0% 35%;
+	margin: 0px 0px 20px 0px;
+	box-shadow: inset 0 0 15px rgba(0,0,0,.5);
+	opacity:0.85;
+	filter:alpha(opacity=40); /* For IE8 and earlier */
+}
+
+/* INDEX STYLES */
+
+.listing {
+	margin: 10px 0px 10px 0px;
+}
+
+.listing li {
+	padding-top: 5px;
+	padding-bottom: 5px;
+	list-style-type: none;
+}
+
+.listing a {
+	font-size: 22px;
+}
+
+a {
+	text-decoration: none !important;
+}
+
+/* SINGLE POST & PAGE STYLE */ 
+
+article header {
+	text-align: right;
+}
+
+.form-allowed-tags {
+	display: none;
+}
+
+article.post section {
+	margin-top: -20px;
+	font-size: 20px;
+	line-height: 30px;
+	
+}
+
+article.post section p {
+	margin-top: 30px;
+	
+}
+
+article.post section li {
+	margin-top: 5px;
+	line-height: inherit; /* Override Bootstrap li style */	
+}
+
+
+
+
+
+
+
